@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IT Глоссарий</title>
+<script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:'#eef2ff', 100:'#e0e7ff', 200:'#c7d2fe', 300:'#a5b4fc',
+              400:'#818cf8', 500:'#6366f1', 600:'#4f46e5', 700:'#4338ca',
+              800:'#3730a3', 900:'#312e81'
+            }
+          }
+        }
+      }
+    };
+  </script>
+<script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Supabase убран -->
+<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="h-full bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+  <div id="app" class="min-h-screen grid grid-rows-[auto,auto,1fr]">
+    <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-200 dark:bg-slate-900/70 dark:border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded-xl bg-brand-600 grid place-content-center text-white font-bold">IT</div>
+          <h1 class="text-lg sm:text-xl font-semibold">Глоссарий IT</h1>
+        </div>
+        <div class="ml-auto flex items-center gap-2">
+          <button id="btn-favorites-view" class="btn" title="Показать избранное">
+            <i data-lucide="star" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Избранное</span>
+          </button>
+          <div class="mx-1 h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+          <label class="toggle cursor-pointer" title="Переключить тему">
+            <input id="theme-toggle" type="checkbox" class="sr-only" />
+            <span class="toggle-circle translate-x-1"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <div id="error-bar" class="max-w-6xl mx-auto w-full px-4 pt-3 hidden">
+      <div class="alert alert-error" role="status">
+        <strong class="font-medium">Ошибка:</strong>
+        <span id="error-text" class="ml-1"></span>
+      </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto w-full px-4 py-6 space-y-4">
+      <section class="card p-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="md:col-span-2 relative">
+            <input id="search" class="input" placeholder="Поиск по имени/аббревиатуре/описанию…" />
+            <i data-lucide="search" class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+          </div>
+          <div class="relative">
+            <select id="domain" class="select">
+              <option value="">Все домены</option>
+            </select>
+            <i data-lucide="chevron-down" class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+          </div>
+        </div>
+        <div class="mt-3 flex flex-wrap items-center gap-2">
+          <button id="btn-random" class="btn">
+            <i data-lucide="shuffle" class="w-4 h-4"></i>
+            Случайный термин
+          </button>
+          <button id="btn-clear" class="btn" title="Сбросить фильтры">
+            <i data-lucide="eraser" class="w-4 h-4"></i>
+            Сбросить
+          </button>
+          <span id="count" class="ml-auto text-sm text-slate-500"></span>
+        </div>
+      </section>
+
+      <section id="spotlight" class="hidden card p-4 space-y-2">
+        <div class="flex items-start gap-2">
+          <i data-lucide="sparkles" class="w-5 h-5 text-brand-600 mt-0.5"></i>
+          <div class="flex-1">
+            <div class="flex items-center gap-2">
+              <h2 class="font-semibold text-lg" id="spotlight-title"></h2>
+              <span class="chip" id="spotlight-domain"></span>
+              <button id="spotlight-fav" class="ml-auto btn px-2 py-1" title="В избранное">
+                <i data-lucide="star" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <p id="spotlight-definition" class="text-slate-700 dark:text-slate-300"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></section>
+      <section id="empty" class="hidden text-center text-slate-500 py-12">
+        Ничего не найдено. Попробуйте изменить запрос или домен.
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-xs text-slate-500">
+      Все права защищены.<span class="font-medium"> Evemiemie</span>. © 2025
+    </footer>
+  </div>
+
+  <script src="script/main.js" type="module"></script>
+</body>
+</html>

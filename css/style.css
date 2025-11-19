@@ -1,0 +1,334 @@
+* {
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid var(--twc-border, #e5e7eb);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dark .card {
+  background: rgba(2, 6, 23, 0.6);
+  border-color: #334155;
+}
+
+.card h3 {
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: block;
+  max-width: 100%;
+  margin-bottom: 0.4rem; 
+}
+
+.card .flex.items-center.gap-2 {
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #334155;
+}
+.btn:hover {
+  background: #f8fafc;
+}
+.dark .btn {
+  border-color: #334155;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+.dark .btn:hover {
+  background: #1f2937;
+}
+
+.btn-primary {
+  background: #6366f1; 
+  border-color: #6366f1;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #4f46e5; 
+  border-color: #4f46e5;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  color: #475569;
+}
+.dark .chip {
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+/* ---------- Inputs / Selects ---------- */
+.input,
+.select {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+.input:focus,
+.select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+.dark .input,
+.dark .select {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e5e7eb;
+}
+
+.toggle {
+  position: relative;
+  width: 3rem; 
+  height: 1.5rem; 
+  border-radius: 9999px;
+  border: 1px solid #cbd5e1;
+  overflow: hidden;
+  background: #e2e8f0; 
+}
+.dark .toggle {
+  background: #334155; 
+  border-color: #475569; 
+}
+.toggle-circle {
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem; 
+  width: 1.25rem;
+  height: 1.25rem; 
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+.dark .toggle-circle {
+  background: #e2e8f0;
+}
+
+.alert {
+  border-radius: 0.75rem;
+  border: 1px solid #fecaca;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+.alert-error {
+  background: #fef2f2;
+  color: #991b1b;
+}
+.dark .alert {
+  border-color: #7f1d1d;
+}
+.dark .alert-error {
+  background: rgba(153, 27, 27, 0.2);
+  color: #fecaca;
+}
+
+.card .btn[data-id],
+#spotlight-fav {
+  width: 2.25rem;
+  height: 2.25rem; 
+  padding: 0;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+}
+.dark .card .btn[data-id],
+.dark #spotlight-fav {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.card .btn[data-id] i,
+#spotlight-fav i {
+  color: #64748b;
+}
+.dark .card .btn[data-id] i,
+.dark #spotlight-fav i {
+  color: #94a3b8;
+}
+
+.card .btn[data-id].btn-primary,
+#spotlight-fav.btn-primary {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #fff; 
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+.dark .card .btn[data-id].btn-primary,
+.dark #spotlight-fav.btn-primary {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35);
+}
+.card .btn[data-id].btn-primary i,
+#spotlight-fav.btn-primary i {
+  color: #fff;
+}
+
+.card p {
+  margin-top: 0.7rem;
+  line-height: 1.5;
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid var(--twc-border, #e5e7eb);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.dark .card {
+  background: rgba(2, 6, 23, 0.6);
+  border-color: #334155;
+}
+
+.card > .flex {
+  align-items: flex-start;
+}
+
+.card > .flex > .flex-1 {
+  min-width: 0; 
+  padding-right: 0.5rem; 
+}
+
+.card .flex.items-center.gap-2 {
+  flex-wrap: nowrap;
+  align-items: baseline;
+  overflow: hidden; 
+}
+
+.card .flex.items-center.gap-2 > h3 {
+  flex: 1 1 auto; 
+  min-width: 0; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.card .flex.items-center.gap-2 .chip {
+  flex: 0 0 auto; 
+}
+
+.card p {
+  margin-top: 0.6rem;
+  line-height: 1.55;
+  text-align: justify; 
+  text-justify: inter-word;
+  hyphens: auto; 
+}
+
+.card .btn[data-id] {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  flex: 0 0 auto; 
+}
+.dark .card .btn[data-id] {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.card .btn[data-id] i {
+  color: #64748b;
+}
+.dark .card .btn[data-id] i {
+  color: #94a3b8;
+}
+.card .btn[data-id].btn-primary {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+.dark .card .btn[data-id].btn-primary {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.35);
+}
+.card .btn[data-id].btn-primary i {
+  color: #fff;
+}
+
+.title-ellipsis {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-ellipsis[data-title]:hover::after,
+.title-ellipsis[data-title]:focus-visible::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 0;
+  bottom: 100%; 
+  transform: translateY(-6px);
+  max-width: 48rem; 
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  background: rgba(15, 23, 42, 0.92); 
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  pointer-events: none; 
+  text-wrap: balance;
+  white-space: normal; 
+}
+
+.dark .title-ellipsis[data-title]:hover::after,
+.dark .title-ellipsis[data-title]:focus-visible::after {
+  background: rgba(2, 6, 23, 0.98);
+}
+
+.title-ellipsis[data-title]:hover::before,
+.title-ellipsis[data-title]:focus-visible::before {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  bottom: 100%;
+  transform: translateY(-2px);
+  border: 6px solid transparent;
+  border-top-color: rgba(15, 23, 42, 0.92);
+  z-index: 29;
+}
+
+.dark .title-ellipsis[data-title]:hover::before,
+.dark .title-ellipsis[data-title]:focus-visible::before {
+  border-top-color: rgba(2, 6, 23, 0.98);
+}
